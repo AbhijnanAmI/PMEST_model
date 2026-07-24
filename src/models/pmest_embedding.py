@@ -1,0 +1,1 @@
+"""PMEST embedding model component."""

@@ -1,0 +1,1 @@
+"""Inference pipeline entry point."""
