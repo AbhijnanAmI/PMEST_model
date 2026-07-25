@@ -29,7 +29,7 @@ facet_classification:
     time: "a date, time period, or temporal duration"
 encoder:
   transformer_model: null
-  use_graph_channel: false
+  use_graph_channel: true
   max_sequence_length: 512
 
 runtime:
