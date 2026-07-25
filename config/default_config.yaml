@@ -1,1 +1,46 @@
-# Default runtime and training configuration for PMEST-Net.
+mode: zero_shot
+vector_space:
+  total_dim: 512
+  facets:
+    personality: 160
+    matter: 96
+    energy: 128
+    space: 64
+    time: 64
+  disentangled: false
+keyword_extraction:
+  method: keybert
+  base_embedding_model: mixedbread-ai/mxbai-embed-large-v1
+  ngram_range: [1, 5]
+  top_n: 20
+  use_mmr: true
+  diversity: 0.5
+  stopwords: english
+facet_classification:
+  method: zero_shot_nli
+  model: MoritzLaurer/deberta-v3-large-zeroshot-v2.0
+  multi_label: true
+  hypothesis_template: "This keyword is an example of {}."
+  labels:
+    personality: "the core subject or main topic"
+    matter: "a physical material, substance, or data medium"
+    energy: "an action, process, method, or transformation"
+    space: "a geographic, spatial, or architectural location"
+    time: "a date, time period, or temporal duration"
+encoder:
+  transformer_model: null
+  use_graph_channel: false
+  max_sequence_length: 512
+
+runtime:
+  batch_size: 8
+  device: auto
+  seed: 42
+training:
+  epochs: null
+  learning_rate: null
+  loss_weights:
+    alpha_kw: null
+    beta_facet: null
+    gamma_ortho: null
+    delta_triplet: null

@@ -1,1 +1,25 @@
 # Project Python dependencies.
+# --- Core ---
+numpy>=1.24.0
+pyyaml>=6.0
+python-dateutil>=2.8.2
+
+# --- Stage 2: Candidate Keyword Extraction (Zero-Shot Prototype) ---
+keybert>=0.8.3
+sentence-transformers>=2.2.2
+
+# --- Stage 3: Facet Classification (Zero-Shot Prototype) ---
+transformers>=4.38.0
+torch>=2.1.0
+
+# --- Preprocessing / NLP utilities ---
+spacy>=3.7.0
+
+# --- Stage 1 (future / trained version) ---
+torch-geometric>=2.4.0
+
+# --- Testing ---
+pytest>=7.4.0
+
+# --- Logging ---
+tqdm>=4.66.0
